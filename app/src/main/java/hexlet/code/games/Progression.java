@@ -6,6 +6,7 @@ public class Progression {
 
     private static final String WELCOME = "What number is missing in the progression?";
     private static final int LENGTH_PROGRESSION = 10;
+    private static final int NO_MAGIC_MAX_STEP = 20;
 
     public static void progressionGame() {
         String[][] progressionGameData = new String[Engine.GAME_POINTS][2];
@@ -18,9 +19,9 @@ public class Progression {
     }
 
     public static String[] genAnswerAndResult() {
-        int missingLine = Engine.randomNum(0, LENGTH_PROGRESSION-1); // Выбираем номер числа, которое будет спрятано
-        int progressionNum = Engine.randomNum(1, 20); // Задаем число, на которое прогрессия будет увеличиваться
-        int firstNum = Engine.randomNum(11, 100); // Заранее заполняем первый эллемент массива
+        int missingLine = Engine.randomNum(0, LENGTH_PROGRESSION - 1); // Выбираем номер числа, которое будет спрятано
+        int progressionNum = Engine.randomNum(1, NO_MAGIC_MAX_STEP); // Задаем число, на которое прогрессия будет увеличиваться
+        int firstNum = Engine.randomNum(Engine.MIN, Engine.MAX); // Заранее заполняем первый эллемент массива
 
         String[] progression = genProgression(firstNum, progressionNum);
         String missingNum = progression[missingLine];
