@@ -23,7 +23,7 @@ public class Calc {
         String mathOperation = OPERATION[Engine.randomNum(0, 2)];
         int result = calculate(firstNum, secondNum, mathOperation);
 
-        String questionNum = firstNum + mathOperation + secondNum;
+        String questionNum = String.join(" ", Integer.toString(firstNum), mathOperation, Integer.toString(secondNum));
         String calculateResult = Integer.toString(result);
 
         return new String[]{questionNum, calculateResult};
