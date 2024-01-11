@@ -2,10 +2,7 @@
 
 run-dist:
 # версия для винды
-	.\build\install\app\bin\app
+	#.\build\install\app\bin\app
 # версия для linux
-#	./build/install/app/bin/app.exe
+	./build/install/app/bin/app
 
-## Start
-
-start:

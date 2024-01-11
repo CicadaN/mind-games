@@ -16,10 +16,10 @@ public class Even {
     }
 
     public static String[] genAnswerAndResult() {
-        int num = Engine.randomNum(Engine.MIN, Engine.MAX);
+        int num = Engine.randomNum(Engine.MAX, Engine.MAX);
         String isEven = num % 2 == 0 ? "yes" : "no";
-        String questionNum = Integer.toString(num);
+        String answerNum = Integer.toString(num);
 
-        return new String[]{questionNum, isEven};
+        return new String[]{answerNum, isEven};
     }
 }
