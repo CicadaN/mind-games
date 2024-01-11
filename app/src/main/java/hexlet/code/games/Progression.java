@@ -18,7 +18,7 @@ public class Progression {
     }
 
     public static String[] genAnswerAndResult() {
-        int missingLine = Engine.randomNum(1, LENGTH_PROGRESSION); // Выбираем номер числа, которое будет спрятано
+        int missingLine = Engine.randomNum(0, LENGTH_PROGRESSION-1); // Выбираем номер числа, которое будет спрятано
         int progressionNum = Engine.randomNum(1, 20); // Задаем число, на которое прогрессия будет увеличиваться
         int firstNum = Engine.randomNum(11, 100); // Заранее заполняем первый эллемент массива
 
