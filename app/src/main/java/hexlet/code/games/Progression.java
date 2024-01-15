@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
 
-    private static final String WELCOME = "What number is missing in the progression?";
+    private static final String DESCRIPTION = "What number is missing in the progression?";
     private static final int LENGTH_PROGRESSION = 10;
     private static final int NO_MAGIC_MAX_STEP = 20;
 
@@ -15,13 +16,13 @@ public class Progression {
             progressionGameData[i] = genAnswerAndResult();
         }
 
-        Engine.engine(WELCOME, progressionGameData);
+        Engine.engine(DESCRIPTION, progressionGameData);
     }
 
     public static String[] genAnswerAndResult() {
-        int missingLine = Engine.randomNum(0, LENGTH_PROGRESSION - 1);
-        int progressionNum = Engine.randomNum(1, NO_MAGIC_MAX_STEP);
-        int firstNum = Engine.randomNum(Engine.MIN, Engine.MAX);
+        int missingLine = Utils.randomNum(0, LENGTH_PROGRESSION - 1);
+        int progressionNum = Utils.randomNum(1, NO_MAGIC_MAX_STEP);
+        int firstNum = Utils.randomNum(Engine.MIN, Engine.MAX);
 
         String[] progression = genProgression(firstNum, progressionNum);
         String missingNum = progression[missingLine];

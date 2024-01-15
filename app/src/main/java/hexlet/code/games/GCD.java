@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
 
-    private static final String WELCOME = "Find the greatest common divisor of given numbers.";
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void gcdGame() {
         String[][] evenGameData = new String[Engine.GAME_POINTS][2];
@@ -13,7 +14,7 @@ public class GCD {
             evenGameData[i] = genAnswerAndResult();
         }
 
-        Engine.engine(WELCOME, evenGameData);
+        Engine.engine(DESCRIPTION, evenGameData);
     }
 
     public static int gcdCalculateRecursion(int a, int b) {
@@ -24,8 +25,8 @@ public class GCD {
     }
 
     public static String[] genAnswerAndResult() {
-        int firstNum = Engine.randomNum(Engine.MIN, Engine.MAX);
-        int secondNum = Engine.randomNum(Engine.MIN, Engine.MAX);
+        int firstNum = Utils.randomNum(Engine.MIN, Engine.MAX);
+        int secondNum = Utils.randomNum(Engine.MIN, Engine.MAX);
         int result = gcdCalculateRecursion(firstNum, secondNum);
 
         String questionNum = firstNum + " " + secondNum;

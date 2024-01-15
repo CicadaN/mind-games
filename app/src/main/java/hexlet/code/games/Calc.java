@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
 
-    private static final String WELCOME = "What is the result of the expression?";
+    private static final String DESCRIPTION = "What is the result of the expression?";
     private static final String[] OPERATION = {"*", "+", "-"};
 
     public static void calculatorGame() {
@@ -14,13 +15,13 @@ public class Calc {
             evenGameData[i] = genAnswerAndResult();
         }
 
-        Engine.engine(WELCOME, evenGameData);
+        Engine.engine(DESCRIPTION, evenGameData);
     }
 
     public static String[] genAnswerAndResult() {
-        int firstNum = Engine.randomNum(Engine.MIN, Engine.MAX);
-        int secondNum = Engine.randomNum(Engine.MIN, Engine.MAX);
-        String mathOperation = OPERATION[Engine.randomNum(0, 2)];
+        int firstNum = Utils.randomNum(Engine.MIN, Engine.MAX);
+        int secondNum = Utils.randomNum(Engine.MIN, Engine.MAX);
+        String mathOperation = OPERATION[Utils.randomNum(0, 2)];
         int result = calculate(firstNum, secondNum, mathOperation);
 
         String questionNum = String.join(" ", Integer.toString(firstNum), mathOperation, Integer.toString(secondNum));
@@ -33,8 +34,7 @@ public class Calc {
             case "*": return firsNum * secondNum;
             case "+": return firsNum + secondNum;
             case "-": return firsNum - secondNum;
-            default: System.out.println("Something wrong");
-            return 0;
+            default: throw new Error("Something wrong: " + mathOperation);
         }
     }
 }
